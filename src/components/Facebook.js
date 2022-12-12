@@ -6,11 +6,13 @@ import CardMedia from '@mui/material/CardMedia';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Skeleton from '@mui/material/Skeleton';
 import SwipeableEdgeDrawer from './drawers/SwipeableEdgeDrawer';
 import TextRating from './notes/TextRating';
 import { useSelector } from 'react-redux'
+
+import MouseOverPopover from '../utils/home_infos/MouseOverPopover';
+
 
 
 function Media(props) {
@@ -18,8 +20,10 @@ function Media(props) {
 
   const data = useSelector(state => state.posts.posts)
   const homeData = data.map((item) => (
-    <div key={item._id} style={{ marginBottom: "30px" }}>
-      <Card sx={{ maxWidth: "100%", m: 2, height: "auto" }}>
+    <div key={item._id} style={{ marginBottom: "45px" }}>
+      <Card sx={{ maxWidth: "100%", m: 2, height: "auto",
+      boxShadow: "10px 10px 10px 5px rgba(0,2,2,0.2)",
+    }}>
         <CardHeader
           avatar={
             loading ? (
@@ -35,8 +39,9 @@ function Media(props) {
           action={
             loading ? null : (
               <IconButton aria-label="settings">
-                <MoreVertIcon />
+                <MouseOverPopover />
               </IconButton>
+
             )
           }
           title={
@@ -55,7 +60,7 @@ function Media(props) {
             loading ? (
               <Skeleton animation="wave" height={10} width="40%" />
             ) : (
-              item.adress.city
+             item.adress.city
             )
           }
         />
@@ -81,21 +86,22 @@ function Media(props) {
               <Skeleton animation="wave" height={10} width="80%" />
             </React.Fragment>
           ) : (
-            <Typography variant="body2" color="text.secondary" component="p">
+            <Typography variant="body2" color="text.secondary" component="p" style={{marginTop:"15px" }}>
               {
                 "Vaches à lait et vaches à viande élevées en plein air dans le respect de l'environnement et de la nature."
               }
             </Typography>
           )}
-
           <SwipeableEdgeDrawer />
           <div style={{ height: "20px" }} />
           <div style={{
             display: "flex",
             float: "right",
           }}>
+            
             <TextRating />
           </div>
+          <div style={{ height: "20px" }} />
         </CardContent>
       </Card >
     </div>

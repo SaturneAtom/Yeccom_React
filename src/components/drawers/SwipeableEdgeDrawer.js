@@ -16,7 +16,6 @@ import CardMedia from '@mui/material/CardMedia';
 
 
 
-
 const drawerBleeding = 56;
 
 const Root = styled('div')(({ theme }) => ({
@@ -39,15 +38,17 @@ const Puller = styled(Box)(({ theme }) => ({
     left: 'calc(50% - 15px)'
 }));
 
+
+
 function SwipeableEdgeDrawer(props) {
     const { window } = props;
     const [open, setOpen] = React.useState(false);
     const toggleDrawer = (newOpen) => () => {
         setOpen(newOpen);
     };
-
-    // This is used only for the example
     const container = window !== undefined ? () => window().document.body : undefined;
+
+   
 
     return (
         <Root>
@@ -55,7 +56,7 @@ function SwipeableEdgeDrawer(props) {
             <Global
                 styles={{
                     '.MuiDrawer-root > .MuiPaper-root': {
-                        height: `calc(60% - ${drawerBleeding}px)`,
+                        height: `calc(50% - ${drawerBleeding}px)`,
                         overflow: 'visible',
                     },
                 }}
@@ -114,42 +115,39 @@ function SwipeableEdgeDrawer(props) {
                         height="auto"
                     >
 
-                        <div style={{
-                            display: "flex", flexDirection: "row",
-                            padding: "10px"
-                        }}>
-                                <div style={{
-                            display: "flex", flexDirection: "row",
-                            padding: "10px"
-                        }}>
-                                    <Card sx={{ maxWidth: "150px", height: "150px", visibility: "visible", margin: "10px", }}>
-                                        <CardMedia
-                                            component="img"
-                                            width="200px"
-                                            image="https://larepublica.pe/resizer/Kr3zhhu5e0lXlwx0w9UFd8-tHrA=/480x282/top/smart/cloudfront-us-east-1.images.arcpublishing.com/gruporepublica/YUR6TURFBVAJPLJDSI7EDYJHCM.jpg"
-                                            alt="green iguana"
-                                        />
-                                        <CardContent>
-                                            <Typography gutterBottom variant="h6" component="div">
-                                                6 Oeufs
-                                            </Typography>
-                                        </CardContent>
-                                    </Card>
-                                    <Card sx={{ maxWidth: "150px", height: "150px", visibility: "visible", margin: "10px", }}>
-                                        <CardMedia
-                                            component="img"
-                                            width="100%"
-                                            image="https://nouvellesgastronomiques.com/wp-content/uploads/2022/01/lait6.png"
-                                            alt="green iguana"
-                                        />
-                                        <CardContent>
-                                            <Typography gutterBottom variant="h6" component="div">
-                                                Lait
-                                            </Typography>
-                                        </CardContent>
-                                    </Card>
-                                </div>
-
+                        <div>
+                        <div  style={{
+        
+        display: "flex", flexDirection: "row",
+        padding: "10px"
+    }}>
+                <Card sx={{ maxWidth: "150px", height: "150px", visibility: "visible", margin: "10px", }}>
+                    <CardMedia
+                        component="img"
+                        width="200px"
+                        image="https://larepublica.pe/resizer/Kr3zhhu5e0lXlwx0w9UFd8-tHrA=/480x282/top/smart/cloudfront-us-east-1.images.arcpublishing.com/gruporepublica/YUR6TURFBVAJPLJDSI7EDYJHCM.jpg"
+                        alt="green iguana"
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h6" component="div">
+                          
+                        </Typography>
+                    </CardContent>
+                </Card>
+                <Card sx={{ maxWidth: "150px", height: "150px", visibility: "visible", margin: "10px", }}>
+                    <CardMedia
+                        component="img"
+                        width="100%"
+                        image="https://nouvellesgastronomiques.com/wp-content/uploads/2022/01/lait6.png"
+                        alt="green iguana"
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h6" component="div">
+                            Lait
+                        </Typography>
+                    </CardContent>
+                </Card>
+            </div>
 
                         </div>
                     </Skeleton>

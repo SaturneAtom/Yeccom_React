@@ -1,14 +1,15 @@
 
 import './App.css';
-import DrawerAppBar from './components/DrawerAppBar';
 import Facebook from './components/Facebook';
+import ResponsiveAppBar from './components/ResponsiveAppBar';
 function App() {
 
 
 
   return (
     <div className="App"> 
-      <DrawerAppBar />
+      <ResponsiveAppBar />
+      <div style={{ height: "70px" }} />
       <Facebook />
     </div>
   );

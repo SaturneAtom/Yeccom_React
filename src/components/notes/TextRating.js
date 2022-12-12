@@ -17,7 +17,7 @@ const labels = {
 };
 
 export default function TextRating() {
-  const value = 3.5;
+  const value = 4.5;
 
   return (
     <Box
@@ -33,6 +33,7 @@ export default function TextRating() {
         readOnly
         precision={0.5}
         emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+        style={{fontSize:"1.2em"}}
       />
       <Box sx={{ ml: 1 }}>{labels[value]}</Box>
     </Box>

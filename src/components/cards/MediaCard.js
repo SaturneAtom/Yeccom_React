@@ -3,8 +3,20 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { useSelector } from 'react-redux';
+
 
 export default function MediaCard() {
+
+ const products = useSelector((state) => state.posts.posts);
+    console.log(products);  
+
+    const product = products.map((item) => (
+        <div key={item._id} style={{ marginBottom: "30px" }}>
+            {item.name}
+        </div>
+    ));
+
     return (
         <div style={{
             display: "flex", flexDirection: "row",
@@ -20,7 +32,7 @@ export default function MediaCard() {
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h6" component="div">
-                        Oeufs
+                        {product}
                     </Typography>
                 </CardContent>
             </Card>

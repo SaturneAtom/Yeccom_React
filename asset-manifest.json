@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Yeccom_React/static/css/main.073c9b0a.css",
+    "main.js": "/Yeccom_React/static/js/main.8c577656.js",
+    "static/media/yecoom_logo.png": "/Yeccom_React/static/media/yecoom_logo.c0aedab548bfd6db7e3a.png",
+    "index.html": "/Yeccom_React/index.html",
+    "main.073c9b0a.css.map": "/Yeccom_React/static/css/main.073c9b0a.css.map",
+    "main.8c577656.js.map": "/Yeccom_React/static/js/main.8c577656.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.8c577656.js"
+  ]
+}
